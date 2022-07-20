@@ -4,27 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="24"
     >
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingTop="4dp"
-        android:paddingBottom="4dp"
-        android:layout_weight="1">
+        android:paddingBottom="4dp">
 
         <Button
             android:id="@+id/ContactsBackButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:background="@drawable/btn_background"
             android:text="Back"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"/>
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -44,9 +45,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="14">
+        android:layout_weight="7">
         <!--<RelativeLayout
             android:layout_width="130dp"
             android:layout_height="130dp"
@@ -76,15 +77,18 @@
         android:background="@color/black" />
 
     <LinearLayout
+        android:id="@+id/ContactsFieldsLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        android:weightSum="25"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:layout_weight="13">
+        android:padding="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="6">
 
             <ImageView
                 android:id="@+id/VectorFirstLast"
@@ -98,11 +102,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_toRightOf="@+id/VectorFirstLast">
+                android:layout_toRightOf="@+id/VectorFirstLast"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:id="@+id/ContactsFirstNameTextView"
                         android:layout_width="95dp"
@@ -123,6 +129,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:id="@+id/ContactsLastNameTextView"
                         android:layout_width="95dp"
@@ -147,7 +154,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="3">
 
             <ImageView
                 android:id="@+id/VectorEmail"
@@ -179,7 +187,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            >
 
             <ImageView
                 android:id="@+id/VectorPhone"
@@ -211,7 +221,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="3">
 
             <ImageView
                 android:id="@+id/VectorAddress"
@@ -241,6 +252,26 @@
                 android:inputType="text" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="First Name and Phone are required to create a contact."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+
+
+        </RelativeLayout>
+
+
     </LinearLayout>
 
     <View
@@ -250,9 +281,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="3">
+        android:layout_weight="2">
 
         <Button
             android:id="@+id/SaveContactButton"

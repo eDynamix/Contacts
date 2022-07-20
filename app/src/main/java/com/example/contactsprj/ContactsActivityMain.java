@@ -17,12 +17,12 @@ import com.google.gson.Gson;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class MainContactsActivity extends Activity {
+public class ContactsActivityMain extends Activity {
 
     Button clearFilter, addNewAcc;
     EditText filterTxt;
     ListView contactsListView;
-    ContactsAdapter contactsListAdapter;
+    ContactsListAdapter contactsListAdapter;
     ContactList contactsArr;
 
     @Override
@@ -46,7 +46,7 @@ public class MainContactsActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence cs, int i, int i1, int i2) {
-                MainContactsActivity.this.contactsListAdapter.getFilter().filter(cs.toString());
+                ContactsActivityMain.this.contactsListAdapter.getFilter().filter(cs.toString());
             }
 
             @Override
@@ -65,7 +65,7 @@ public class MainContactsActivity extends Activity {
         addNewAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainContactsActivity.this, ContactsAddNewContactActivity.class));
+                startActivity(new Intent(ContactsActivityMain.this, ContactsActivityAddNewContact.class));
             }
         });
     }
@@ -102,7 +102,7 @@ public class MainContactsActivity extends Activity {
 
     private void loadDataToList(){
         contactsListView = findViewById(R.id.ContactsList);
-        contactsListAdapter = new ContactsAdapter(this, contactsArr);
+        contactsListAdapter = new ContactsListAdapter(this, contactsArr);
         contactsListView.setAdapter(contactsListAdapter);
     }
 
@@ -111,7 +111,7 @@ public class MainContactsActivity extends Activity {
         contactsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(MainContactsActivity.this, ClickInListActivity.class);
+                Intent intent = new Intent(ContactsActivityMain.this, ContactsActivityClickInList.class);
                 intent.putExtra("position", position);
                 startActivity(intent);
             }

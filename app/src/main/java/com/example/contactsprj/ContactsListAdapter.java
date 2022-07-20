@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class ContactsAdapter extends BaseAdapter implements Filterable {
+public class ContactsListAdapter extends BaseAdapter implements Filterable {
 
     protected Context context;
     protected ContactList contacts;
@@ -50,7 +50,7 @@ public class ContactsAdapter extends BaseAdapter implements Filterable {
         }
     };
 
-    public ContactsAdapter(Context context, ContactList contacts) {
+    public ContactsListAdapter(Context context, ContactList contacts) {
         this.context = context;
         this.contacts = contacts;
         this.filteredItems = new ContactList(contacts);

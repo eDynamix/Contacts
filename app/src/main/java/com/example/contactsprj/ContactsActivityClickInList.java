@@ -1,14 +1,11 @@
 package com.example.contactsprj;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +17,7 @@ import com.google.gson.Gson;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ClickInListActivity extends Activity {
+public class ContactsActivityClickInList extends Activity {
 
     EditText firstName, lastName, email, address, phone;
     TextView first2Letters;
@@ -72,7 +69,7 @@ public class ClickInListActivity extends Activity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(ClickInListActivity.this).setTitle("Delete Confirmation").setMessage("Are you sure you want to delete this contact?").setIcon(R.drawable.ic_contacts_delete)
+                new AlertDialog.Builder(ContactsActivityClickInList.this).setTitle("Delete Confirmation").setMessage("Are you sure you want to delete this contact?").setIcon(R.drawable.ic_contacts_delete)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -113,10 +110,10 @@ public class ClickInListActivity extends Activity {
                                 saveData();
                                 finish();
                             } catch (UnsupportedOperationException e1){
-                                new AlertDialog.Builder(ClickInListActivity.this).setTitle("Invalid data").setMessage("You must include a First Name and a Phone Number to save your contact")
+                                new AlertDialog.Builder(ContactsActivityClickInList.this).setTitle("Invalid data").setMessage("You must include a First Name and a Phone Number to save your contact")
                                         .setNeutralButton("OK", null).show();
                             }catch (IllegalArgumentException e){
-                                new AlertDialog.Builder(ClickInListActivity.this).setTitle("Invalid data").setMessage("The email must be valid and the phone number must only contain numbers.")
+                                new AlertDialog.Builder(ContactsActivityClickInList.this).setTitle("Invalid data").setMessage("The email must be valid and the phone number must only contain numbers.")
                                         .setNeutralButton("OK", null).show();
                             }
 

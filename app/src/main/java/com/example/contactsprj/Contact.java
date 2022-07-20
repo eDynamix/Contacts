@@ -7,18 +7,18 @@ import java.util.Comparator;
 import java.util.Locale;
 
 public class Contact {
-    private String firstName, lastName, email, address, nameFirst2Letters, telNum;
+    private String firstName, lastName, email, address, nameFirst2Letters, phoneNum;
 
-    public Contact(String fN, String lN, String eM, String addrs, String tel) {
+    public Contact(String fN, String lN, String eM, String addrs, String phone) {
         firstName = fN;
         lastName = lN;
         email = eM;
         address = addrs;
-        telNum = tel;
+        phoneNum = phone;
         nameFirst2Letters = "";
-        if(firstName.isEmpty() || telNum.isEmpty()) throw new UnsupportedOperationException();
+        if(firstName.isEmpty() || phoneNum.isEmpty()) throw new UnsupportedOperationException();
         if(!email.equals("") && !hasValidEmail()) throw new IllegalArgumentException();
-        if(!tel.equals("") && !hasValidPhone()) throw new IllegalArgumentException();
+        if(!phoneNum.equals("") && !hasValidPhone()) throw new IllegalArgumentException();
         if (firstName.length() == 0) {
             nameFirst2Letters = (lastName.substring(0, 2)).toUpperCase();
         } else if (lastName.length() == 0) {
@@ -33,7 +33,7 @@ public class Contact {
         lastName = c.getLastName();
         email = c.getEmail();
         address = c.getAddress();
-        telNum = c.getTelNum();
+        phoneNum = c.getTelNum();
         nameFirst2Letters = "";
         if (firstName.length() == 0) {
             nameFirst2Letters = (lastName.substring(0, 2)).toUpperCase();
@@ -65,7 +65,7 @@ public class Contact {
     }
 
     public String getTelNum() {
-        return telNum;
+        return phoneNum;
     }
 
     private boolean hasValidEmail() {
@@ -73,15 +73,15 @@ public class Contact {
     }
 
     private boolean hasValidPhone(){
-        for(int i = 0; i < telNum.length(); i++) {
-            if(telNum.charAt(i)<'0' || telNum.charAt(i)>'9') return false;
+        for(int i = 0; i < phoneNum.length(); i++) {
+            if(phoneNum.charAt(i)<'0' || phoneNum.charAt(i)>'9') return false;
         }
         return true;
     }
 
     @Override
     public String toString(){
-        return firstName + lastName + email + address + telNum;
+        return firstName + lastName + email + address + phoneNum;
     }
 
     /*@Override

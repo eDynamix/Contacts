@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ContactsAddNewContactActivity extends Activity {
+public class ContactsActivityAddNewContact extends Activity {
 
     private ContactList contactsArr;
     private Button backBtn, saveContactBtn;
@@ -58,10 +58,10 @@ public class ContactsAddNewContactActivity extends Activity {
 
                     finish();
                 } catch (UnsupportedOperationException e1){
-                    new AlertDialog.Builder(ContactsAddNewContactActivity.this).setTitle("Invalid data").setMessage("You must include at least a First Name and a Phone Number to save your contact")
+                    new AlertDialog.Builder(ContactsActivityAddNewContact.this).setTitle("Invalid data").setMessage("You must include at least a First Name and a Phone Number to save your contact")
                             .setNeutralButton("OK", null).show();
                 } catch (IllegalArgumentException e){
-                    new AlertDialog.Builder(ContactsAddNewContactActivity.this).setTitle("Invalid data").setMessage("The email must be valid and the phone number must only contain numbers.")
+                    new AlertDialog.Builder(ContactsActivityAddNewContact.this).setTitle("Invalid data").setMessage("The email must be valid and the phone number must only contain numbers.")
                             .setNeutralButton("OK", null).show();
                 }
 
